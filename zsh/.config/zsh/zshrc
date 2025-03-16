@@ -1,0 +1,70 @@
+bindkey -v
+unsetopt case_glob
+setopt glob_complete
+setopt glob_star_short
+setopt mark_dirs
+
+export HISTFILE=~/.config/zsh/histfile
+export HISTSIZE=1000
+export SAVEHIST=1000
+export LESS="-giMQR -j3 --incsearch"
+export EDITOR="nvim"
+export BROWSER="firefox"
+
+# proxy
+export http_proxy='http://localhost:7890'
+export HTTP_PROXY="$http_proxy"
+export https_proxy="$http_proxy"
+export HTTPS_PROXY="$http_proxy"
+export all_proxy="$http_proxy"
+export ALL_PROXY="$http_proxy"
+
+# zplugin init
+ZPLUG_HOME=${XDG_DATA_HOME:-$HOME/.local/share}/zplug
+source /usr/share/zsh/scripts/zplug/init.zsh
+
+# plugins
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions", defer:2
+zplug "plugins/sudo", from:oh-my-zsh
+
+# zplugin check
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
+
+# theme
+eval "$(starship init zsh)"
+
+# zoxide
+eval "$(zoxide init zsh)"
+
+# syntax-highlight
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
+
+# ls
+source <(dircolors -b)
+
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias l='ll -A'
+alias la='ls -A'
+
+# ffmpeg-normalize
+common_args="-t '-18' -tp '-1' -lrt 50 -ar 44100 -c:v copy"
+alias mp3-normalize="ffmpeg-normalize $common_args -c:a mp3 -e '-aq 0' -ofmt mp3 -ext mp3";
+alias flac-normalize="ffmpeg-normalize $common_args -c:a flac -ofmt flac";
+
+# completion
+zstyle ':completion:*default' list-colors "$LS_COLORS" # LS_COLOR from ls.zsh
+
+# aliases
+alias grep="grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}"
+alias free='free -h'
+alias df='df -h -x tmpfs -x efivarfs -x devtmpfs'
+

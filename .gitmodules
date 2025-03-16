@@ -1,0 +1,6 @@
+[submodule "catppuccin-kde/.local/themes/catppuccin-kde"]
+	path = catppuccin-kde/.local/themes/catppuccin-kde
+	url = https://github.com/catppuccin/kde
+[submodule "konsole/.local/themes/konsole"]
+	path = konsole/.local/themes/konsole
+	url = https://github.com/catppuccin/konsole

@@ -1,0 +1,21 @@
+[init]
+    defaultBranch = "main"
+
+[user]
+    email = "alecvbnm@outlook.com"
+    name = "Alec"
+
+[http]
+    ; proxy = "http://localhost:7890"
+
+[alias]
+    a = "add"
+    aa = "add --all"
+
+    s = "status --short --branch"
+    sl = "status"
+
+    c = "commit"
+    ca = "commit --all"
+    cu = "commit --amend"
+

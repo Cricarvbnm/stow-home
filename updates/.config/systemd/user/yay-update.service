@@ -1,0 +1,7 @@
+[Unit]
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=yay -Syuw --noconfirm
+

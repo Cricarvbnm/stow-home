@@ -1,0 +1,8 @@
+[Install]
+WantedBy=graphical-session.target
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+
+[Unit]
+Description=Start when 6 am.

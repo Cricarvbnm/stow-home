@@ -1,0 +1,10 @@
+[Service]
+WorkingDirectory=%h/dev/python/projects/torrent_manager
+ExecStart=uv run torrent-manager resume
+Restart=no
+Type=oneshot
+
+[Unit]
+After=network-online.target
+Description=Resume downloading torrents
+Wants=network-online.target

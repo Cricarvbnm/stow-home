@@ -1,0 +1,12 @@
+[Desktop Entry]
+Comment=
+Exec=polybar --reload bottom
+Name=polybar bottom
+NoDisplay=false
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-KDE-SubstituteUID=false
+X-KDE-Username=

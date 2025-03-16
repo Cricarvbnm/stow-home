@@ -1,0 +1,32 @@
+{
+    "Anime": {
+        "BanG Dream! Ave Mujica": {
+            "uid": "{ff4075d0-4141-46ff-9b95-98d20f2e62a1}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=ave+mujica+sort_id%3A2"
+        },
+        "从零开始的异世界生活": {
+            "uid": "{6898bb61-85a6-4098-829c-829391885bea}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E7%9A%84%E5%BC%82%E4%B8%96%E7%95%8C%E7%94%9F%E6%B4%BB+sort_id%3A2"
+        },
+        "我与尼特女忍者的莫名同居生活": {
+            "uid": "{4e1e965c-6490-4eef-82b7-1a305c0dc21e}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E6%88%91%E4%B8%8E%E5%B0%BC%E7%89%B9%E5%A5%B3%E5%BF%8D%E8%80%85%E7%9A%84%E8%8E%AB%E5%90%8D%E5%90%8C%E5%B1%85%E7%94%9F%E6%B4%BB"
+        },
+        "我独自升级 Season2 -Arise from the Shadow-": {
+            "uid": "{be2adf9c-c255-4e8a-a37b-4a2964598d66}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=sort_id%3A2+%E6%88%91%E7%8B%AC%E8%87%AA%E5%8D%87%E7%BA%A7&sort_id=2&team_id=0&order=date-desc"
+        },
+        "超超超超超喜欢你的100个女朋友": {
+            "uid": "{51f18851-7170-4979-8ef4-6f2ebafdd32b}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=sort_id%3A2+%E8%B6%85%E8%B6%85%E8%B6%85%E8%B6%85%E8%B6%85%E5%96%9C%E6%AC%A2%E4%BD%A0%E7%9A%84100%E4%B8%AA%E5%A5%B3%E6%9C%8B%E5%8F%8B&sort_id=2&team_id=0&order=date-desc"
+        },
+        "金牌得主": {
+            "uid": "{1c93b468-4ceb-4aed-b288-7cd7639697f1}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E9%87%91%E7%89%8C%E5%BE%97%E4%B8%BB+sort_id%3A2"
+        },
+        "香格里拉·开拓异境": {
+            "uid": "{9bf73f73-6f66-43df-89d5-724ac9a5e415}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E9%A6%99%E6%A0%BC%E9%87%8C%E6%8B%89+sort_id%3A2"
+        }
+    }
+}

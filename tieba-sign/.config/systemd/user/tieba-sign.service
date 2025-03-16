@@ -1,0 +1,9 @@
+[Service]
+WorkingDirectory=%h/dev/python/projects/tieba-sign
+ExecStart=uv run tieba-sign
+Restart=no
+Type=oneshot
+
+[Unit]
+After=network-online.target
+Wants=network-online.target

@@ -1,0 +1,14 @@
+[Install]
+WantedBy=graphical-session.target
+
+[Service]
+ExecStart=docker-compose up
+ExecStop=docker-compose stop
+WorkingDirectory=%h/.local/opt/PeerBanHelper
+
+[Unit]
+After=docker.service
+After=network-online.target
+Description=Peer Ban Helper
+Wants=docker.service
+Wants=network-online.target

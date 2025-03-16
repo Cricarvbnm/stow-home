@@ -1,0 +1,6 @@
+[Install]
+WantedBy=default.target
+
+[Timer]
+OnCalendar=*:00:00
+
