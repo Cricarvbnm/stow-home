@@ -68,3 +68,5 @@ alias grep="grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.to
 alias free='free -h'
 alias df='df -h -x tmpfs -x efivarfs -x devtmpfs'
 
+# variables
+export PATH="$HOME/.local/bin${PATH:+:$PATH}"
