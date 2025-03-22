@@ -9,9 +9,9 @@ return {
             function()
                 require('nvim-treesitter.configs').setup {
                     ensure_installed = {
-                        'lua', 'bash', 'python', 'awk', 'cpp', 'java', 'html', 'xml',
+                        'lua', 'bash', 'python', 'awk', 'cpp', 'java', 'html', 'xml', 'go',
                         'json', 'printf', 'toml', 'yaml', 'javascript',
-                        'markdown', 'markdown_inline', 'vim', 'vimdoc'
+                        'markdown', 'markdown_inline', 'vim', 'vimdoc',
                     },
                 }
             end

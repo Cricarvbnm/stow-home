@@ -1,14 +1,40 @@
 vim.o.jumpoptions = 'stack'
 
 -- Tab
-vim.o.shiftwidth = 4
-vim.o.softtabstop = -1 -- follw shiftwidth
+local function mixedTab(width)
+    vim.o.tabstop = 8
+    vim.o.expandtab = false
+    vim.o.shiftwidth = width
+    vim.o.softtabstop = -1 -- follw shiftwidth
+end
+
+local function expandTab(width)
+    vim.o.tabstop = 8
+    vim.o.expandtab = true
+    vim.o.shiftwidth = width
+    vim.o.softtabstop = -1
+end
+
+local function changeTab(width)
+    vim.o.tabstop = width
+    vim.o.expandtab = false
+    vim.o.shiftwidth = width
+    vim.o.softtabstop = -1
+end
 
 vim.api.nvim_create_autocmd('FileType', {
+    callback = function() expandTab(4) end,
+    pattern = { 'python', 'java', 'lua' },
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    callback = function() expandTab(2) end,
     pattern = { 'c', }, -- add new filetypes in this list
-    callback = function()
-        vim.opt_local.shiftwidth = 2
-    end
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    callback = function() changeTab(4) end,
+    pattern = { 'go' }
 })
 
 -- Editor
@@ -27,4 +53,3 @@ vim.o.ignorecase = true
 
 -- Mouse
 vim.o.mouse = a
-

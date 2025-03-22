@@ -1,6 +1,5 @@
 [Service]
-WorkingDirectory=%h/dev/python/projects/tieba-sign
-ExecStart=uv run tieba-sign
+ExecStart=tieba-sign
 Restart=no
 Type=oneshot
 

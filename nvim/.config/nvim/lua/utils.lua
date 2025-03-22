@@ -1,3 +1,5 @@
+InVscode = false
+
 return {
     try_require = function(name)
         local status, message = pcall(require, name)
@@ -7,6 +9,6 @@ return {
     end,
 
     is_nvim_editor = function()
-        return vim.g.vscode == nil
+        return not InVscode
     end,
 }
