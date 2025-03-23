@@ -3,11 +3,9 @@ return {
 
     event = 'BufEnter',
 
-    opts = require('utils').is_nvim_editor()
-        and {
-            fancy = {
-                enable = true,
-            },
-        }
-        or nil,
+    opts = {
+        fancy = {
+            enable = true,
+        },
+    }
 }

@@ -10,7 +10,5 @@ return {
         { '<a-s-F12>', "<cmd>lua require('goto-preview').close_all_win()<CR>" },
     },
 
-    opts = require('utils').is_nvim_editor()
-        and {}
-        or nil,
+    opt = {},
 }
