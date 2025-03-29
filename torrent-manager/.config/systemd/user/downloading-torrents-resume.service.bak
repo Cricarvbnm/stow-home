@@ -1,5 +1,6 @@
 [Service]
-ExecStart=torrent-manager resume
+WorkingDirectory=%h/dev/python/projects/torrent_manager
+ExecStart=uv run torrent-manager resume
 Restart=no
 Type=oneshot
 

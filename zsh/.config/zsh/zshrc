@@ -1,23 +1,37 @@
 unsetopt case_glob
-setopt hist_ignore_dups
 setopt glob_complete
 setopt glob_star_short
 setopt mark_dirs
 
-export HISTFILE=~/.config/zsh/histfile
-export HISTSIZE=1000
-export SAVEHIST=1000
 export LESS="-giMQR -j3 --incsearch"
 export EDITOR="nvim"
 export BROWSER="firefox"
 
+# history
+setopt hist_ignore_dups
+export HISTFILE=~/.config/zsh/histfile
+export SAVEHIST=1000
+export HISTSIZE=1000
+
 # proxy
-export http_proxy='http://localhost:7890'
-export HTTP_PROXY="$http_proxy"
-export https_proxy="$http_proxy"
-export HTTPS_PROXY="$http_proxy"
-export all_proxy="$http_proxy"
-export ALL_PROXY="$http_proxy"
+function _proxy-set() {
+	export http_proxy="$1"
+	export HTTP_PROXY="$http_proxy"
+	export https_proxy="$http_proxy"
+	export HTTPS_PROXY="$http_proxy"
+	export all_proxy="$http_proxy"
+	export ALL_PROXY="$http_proxy"
+}
+
+function proxy-set() {
+	_proxy-set 'http://localhost:7890'
+}
+
+function proxy-unset() {
+	_proxy-set ''
+}
+
+proxy-set
 
 # key binding
 typeset -gA key
@@ -91,7 +105,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS+=(brackets pattern cursor)
 # ls
 source <(dircolors -b)
 
-alias ls='ls --color=auto'
+alias ls='ls -h --color=auto'
 alias ll='ls -l'
 alias l='ll -A'
 alias la='ls -A'
@@ -102,6 +116,9 @@ alias mp3-normalize="ffmpeg-normalize $common_args -c:a mp3 -e '-aq 0' -ofmt mp3
 alias flac-normalize="ffmpeg-normalize $common_args -c:a flac -ofmt flac";
 
 # completion
+autoload -U compinit
+compinit
+zstyle ':completion:*' menu select
 zstyle ':completion:*default' list-colors "$LS_COLORS" # LS_COLOR from ls.zsh
 
 # aliases
@@ -109,7 +126,3 @@ alias grep="grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.to
 alias free='free -h'
 alias df='df -h -x tmpfs -x efivarfs -x devtmpfs'
 
-# completion
-autoload -U compinit
-compinit
-zstyle ':completion:*' menu select

@@ -1,4 +1,6 @@
-vim.keymap.set({ 'n', 'i' }, '<F9>', '<cmd>nohlsearch<CR>') -- No highlighting now
+vim.g.mapleader = " "
+
+vim.keymap.set({ 'n' }, '<Leader>h', '<cmd>nohlsearch<CR>') -- No highlighting now
 
 vim.keymap.set({ 'n', 'i' }, '<c-h>', '<cmd>BufferLineCyclePrev<CR>')
 vim.keymap.set({ 'n', 'i' }, '<c-l>', '<cmd>BufferLineCycleNext<CR>')

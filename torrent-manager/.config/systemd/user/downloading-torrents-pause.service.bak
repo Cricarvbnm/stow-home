@@ -1,0 +1,8 @@
+[Service]
+WorkingDirectory=%h/dev/python/projects/torrent_manager
+ExecStart=uv run torrent-manager pause
+Restart=no
+Type=oneshot
+
+[Unit]
+Description=Pause downloading torrents
