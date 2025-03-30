@@ -1,13 +1,5 @@
 {
     "Anime": {
-        "BanG Dream! Ave Mujica": {
-            "uid": "{ff4075d0-4141-46ff-9b95-98d20f2e62a1}",
-            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=ave+mujica+sort_id%3A2"
-        },
-        "我独自升级 Season2 -Arise from the Shadow-": {
-            "uid": "{be2adf9c-c255-4e8a-a37b-4a2964598d66}",
-            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=sort_id%3A2+%E6%88%91%E7%8B%AC%E8%87%AA%E5%8D%87%E7%BA%A7&sort_id=2&team_id=0&order=date-desc"
-        },
         "金牌得主": {
             "uid": "{1c93b468-4ceb-4aed-b288-7cd7639697f1}",
             "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E9%87%91%E7%89%8C%E5%BE%97%E4%B8%BB+sort_id%3A2"
