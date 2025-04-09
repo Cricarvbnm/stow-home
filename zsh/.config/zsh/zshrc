@@ -119,7 +119,7 @@ alias flac-normalize="ffmpeg-normalize $common_args -c:a flac -ofmt flac";
 autoload -U compinit
 compinit
 zstyle ':completion:*' menu select
-zstyle ':completion:*default' list-colors "$LS_COLORS" # LS_COLOR from ls.zsh
+zstyle ':completion:*default' list-colors "$LS_COLORS"
 
 # aliases
 alias grep="grep -P --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox,.venv,venv}"

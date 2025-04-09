@@ -1,5 +1,8 @@
 vim.o.jumpoptions = 'stack'
 
+-- Encoding
+vim.o.fileencodings = 'ucs-bom,utf-8,cp936,gb18030,big5,sjis,euc-jp,latin1'
+
 -- Tab
 local function mixedTab(width)
     vim.o.tabstop = 8
