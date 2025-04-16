@@ -3,9 +3,7 @@ setopt glob_complete
 setopt glob_star_short
 setopt mark_dirs
 
-export LESS="-giMQR -j3 --incsearch"
-export EDITOR="nvim"
-export BROWSER="firefox"
+source $ZDOTDIR/zshenv
 
 # history
 setopt hist_ignore_dups

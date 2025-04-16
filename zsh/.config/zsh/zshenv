@@ -1,1 +1,7 @@
 export ZDOTDIR=$HOME/.config/zsh
+
+export PATH=$HOME/.local/bin:$PATH
+export LESS="-giMQR -j3 --incsearch"
+export EDITOR=nvim
+export BROWSER=firefox
+

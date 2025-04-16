@@ -1,5 +1,5 @@
 [Service]
-ExecStart=tieba-sign
+ExecStart=zsh -c 'tieba-sign'
 Restart=no
 Type=oneshot
 
