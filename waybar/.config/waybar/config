@@ -1,0 +1,45 @@
+{
+  "layer": "top",
+  "position": "bottom",
+	"margin-top": 8,
+
+  "modules-left": ["network#eth",  "network#wifi"],
+  "modules-right": ["custom/yay-updates", "disk#root", "disk#storage"],
+
+  // 内置网络模块 (多实例配置)
+  "network": {
+    "interval": 5,
+    "format-disconnected": ""
+  },
+  "network#eth": {
+    "interface": "enp108s0",
+		"format-ethernet": "󰲝: {ipaddr}"
+  },
+  "network#wifi": {
+    "interface": "wlo1",
+		"format-wifi": "{icon}: {essid}: {ipaddr}",
+		"format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+		"format-disconnected": "󰖪"
+  },
+
+  // 内置存储模块
+  "disk": {
+		"interval": 60
+  },
+  "disk#root": {
+    "path": "/",
+    "format": "{path}: {percentage_used}%"
+  },
+  "disk#storage": {
+		"path": "/storage",
+    "format": "{path}: {percentage_used}%"
+  },
+
+  // 自定义更新模块
+  "custom/yay-updates": {
+    "type": "custom/exec",
+    "exec": "yay -Quq | wc -l",
+    "interval": 60,
+    "format": "yay: {}"
+  }
+}

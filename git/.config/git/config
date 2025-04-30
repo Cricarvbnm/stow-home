@@ -6,7 +6,7 @@
     name = "Alec"
 
 [http]
-    ; proxy = "http://localhost:7890"
+    proxy = "http://localhost:7890"
 
 [alias]
     a = "add"

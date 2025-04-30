@@ -1,6 +1,0 @@
-[Unit]
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=flatpak update --no-deploy -y

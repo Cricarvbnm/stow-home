@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+yay -Syuw --noconfirm &
+flatpak update --no-deploy -y &
+proxychains tldr --update &
+
+wait

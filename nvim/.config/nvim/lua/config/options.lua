@@ -1,24 +1,24 @@
 vim.o.jumpoptions = 'stack'
 
 -- Encoding
-vim.o.fileencodings = 'ucs-bom,utf-8,cp936,gb18030,big5,sjis,euc-jp,latin1'
+vim.o.fileencodings = 'ucs-bom,utf-8,cp936,gb18030,gbk,big5,sjis,euc-jp,latin1'
 
 -- Tab
-local function mixedTab(width)
+function mixedTab(width)
     vim.o.tabstop = 8
     vim.o.expandtab = false
     vim.o.shiftwidth = width
     vim.o.softtabstop = -1 -- follw shiftwidth
 end
 
-local function expandTab(width)
+function expandTab(width)
     vim.o.tabstop = 8
     vim.o.expandtab = true
     vim.o.shiftwidth = width
     vim.o.softtabstop = -1
 end
 
-local function changeTab(width)
+function changeTab(width)
     vim.o.tabstop = width
     vim.o.expandtab = false
     vim.o.shiftwidth = width
@@ -27,7 +27,7 @@ end
 
 vim.api.nvim_create_autocmd('FileType', {
     callback = function() expandTab(4) end,
-    pattern = { 'python', 'java', 'lua' },
+    pattern = { 'python', 'java', 'lua', 'sql' },
 })
 
 vim.api.nvim_create_autocmd('FileType', {

@@ -1,0 +1,58 @@
+@define-color	ma-crust	#181926;
+@define-color	ma-mantle 	#1e2030;
+@define-color	ma-base		#24273a;
+ 
+@define-color	ma-surface0	#363a4f;
+@define-color	ma-surface1	#494d64;
+@define-color	ma-surface2	#5b6078;
+ 
+@define-color	ma-overlay0	#6e738d;
+@define-color	ma-overlay1	#8087a2;
+@define-color	ma-overlay2	#939ab7;
+ 
+@define-color	ma-subtext0	#a5adcb;
+@define-color	ma-subtext1	#b8c0e0;
+@define-color	ma-text		#cad3f5;
+ 
+@define-color	ma-lavender	#b7bdf8;
+@define-color	ma-blue		#8aadf4;
+@define-color	ma-sapphire	#7dc4e4;
+@define-color	ma-sky		#91d7e3;
+@define-color	ma-teal		#8bd5ca;
+@define-color	ma-green	#a6da95;
+@define-color	ma-yellow	#eed49f;
+@define-color	ma-peach	#f5a97f;
+@define-color	ma-maroon	#ee99a0;
+@define-color	ma-red		#ed8796;
+@define-color	ma-mauve	#c6a0f6;
+@define-color	ma-pink		#f5bde6;
+@define-color	ma-flamingo	#f0c6c6;
+@define-color	ma-rosewater	#f4dbd6;
+
+@define-color	background 	@ma-crust;
+@define-color	overlay 	@ma-base;
+@define-color	foreground 	@ma-text;
+@define-color	disabled 	@ma-subtext0;
+
+* {
+  font-family: "monospace";
+  font-size: 12px;
+  border: none;
+  border-radius: 0;
+}
+
+window#waybar {
+  background-color: @background;
+  color: @foreground;
+}
+
+#network
+, #disk
+, #custom-yay-updates{
+  background-color: @overlay;
+  margin: 0.4rem 0.4rem;
+  padding: 0.2rem 0.4rem;
+}
+#network.disconnected {
+  color: @disabled;
+}
