@@ -1,0 +1,11 @@
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor=,preferred,auto,auto
+
+# See https://wiki.hyprland.org/Configuring/XWayland/
+# unscale xwayland
+xwayland {
+    force_zero_scaling = true
+}
+# toolkit-specific scale
+env = GDK_SCALE,2
+env = XCURSOR_SIZE,32

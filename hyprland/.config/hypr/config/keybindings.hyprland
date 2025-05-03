@@ -1,0 +1,14 @@
+$mainMod = SUPER
+
+bind = $mainMod, C, killactive,
+bind = , mouse:276, killactive,
+bind = CTRL ALT, delete, exit,
+bind = $mainMod, P, pseudo, # dwindle
+bind = $mainMod, space, togglesplit, # dwindle
+bind = $mainMod, V, togglefloating,
+bind = $mainMod, semicolon, exec, hyprlock
+
+source = $configDir/keybindings/programs.hyprland
+source = $configDir/keybindings/window.hyprland
+source = $configDir/keybindings/workspace.hyprland
+source = $configDir/keybindings/media.hyprland

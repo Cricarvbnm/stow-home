@@ -1,0 +1,18 @@
+sort=-time
+layer=overlay
+background-color=#24273a
+border-size=2
+border-color=#8aadf4
+border-radius=12
+default-timeout=5000
+font=serif 10
+
+margin=12
+padding=12,20
+
+[urgency=low]
+border-color=#a5adcb
+
+[urgency=critical]
+border-color=#ed8796
+default-timeout=0

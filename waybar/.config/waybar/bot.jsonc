@@ -1,0 +1,14 @@
+{
+"include": [
+    "$HOME/.config/waybar/modules/common.jsonc",
+    "$HOME/.config/waybar/modules/custom.jsonc",
+    "$HOME/.config/waybar/modules/groups.jsonc",
+],
+
+"layer": "top",
+"position": "bottom",
+"spacing": 8,
+
+"modules-left": ["group/networks"],
+"modules-right": ["custom/yay-updates", "disk#root", "disk#storage"],
+}

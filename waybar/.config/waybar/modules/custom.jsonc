@@ -1,0 +1,10 @@
+{
+"custom/yay-updates": {
+    "tooltip": false,
+    "type": "custom/exec",
+    "exec": "yay -Quq | wc -l",
+    "interval": 60,
+    "format": "yay: {}",
+    "on-click": "kitty --hold zsh -c 'yay -Su'"
+},
+}

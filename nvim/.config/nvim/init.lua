@@ -1,5 +1,6 @@
 local utils = require('utils')
 
+utils.try_require('config.filetype')
 utils.try_require('config.options')
 utils.try_require('config.keymap')
 

@@ -1,0 +1,38 @@
+{
+"include": [
+    "$HOME/.config/waybar/modules/separators.jsonc",
+    "$HOME/.config/waybar/modules/common.jsonc",
+],
+
+"group/mobo_drawer": {
+    "orientation": "inherit",
+    "modules": [
+	"cpu",
+	"custom/separator#dot-line",
+	"memory",
+    ],
+},
+
+"group/power": {
+    "orientation": "inherit",
+    "modules": [
+	"battery",
+	"custom/separator#dot-line",
+	"power-profiles-daemon",
+    ],
+},
+
+"group/audio": {
+    "orientation": "inherit",
+    "modules": [
+	"pulseaudio",
+    ],
+},
+
+"group/networks": {
+    "modules": [
+	"network#eth",
+	"network#wifi",
+    ],
+},
+}
