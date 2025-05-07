@@ -5,7 +5,7 @@ bind = , mouse:276, killactive,
 bind = CTRL ALT, delete, exit,
 bind = $mainMod, P, pseudo, # dwindle
 bind = $mainMod, space, togglesplit, # dwindle
-bind = $mainMod, V, togglefloating,
+bind = $mainMod CTRL, V, togglefloating,
 bind = $mainMod, semicolon, exec, hyprlock
 
 source = $configDir/keybindings/programs.hyprland

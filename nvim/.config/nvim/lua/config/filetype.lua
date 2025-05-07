@@ -22,7 +22,15 @@ end
 
 vim.api.nvim_create_autocmd('FileType', {
     callback = function() expandTab(4) end,
-    pattern = { 'python', 'java', 'lua', 'sql' },
+    pattern = {
+        'python',
+        'java',
+        'lua',
+        'sql',
+        'sh',
+        'bash',
+        'zsh',
+    },
 })
 vim.api.nvim_create_autocmd('FileType', {
     callback = function() expandTab(2) end,
@@ -38,7 +46,7 @@ mixTab(4)
 
 
 -- File Extension
-vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*.hyprland",
     callback = function() vim.bo.filetype = "hyprlang" end
 })

@@ -11,6 +11,8 @@ return {
             filetype = {
                 lua = { function() vim.lsp.buf.format() end },
                 sh = { formatter_filetypes.zsh.beautysh },
+                bash = { formatter_filetypes.zsh.beautysh },
+                zsh = { formatter_filetypes.zsh.beautysh },
                 c = { formatter_filetypes.c.clangformat },
                 cpp = { formatter_filetypes.cpp.clangformat },
                 go = { formatter_filetypes.go.gofmt },

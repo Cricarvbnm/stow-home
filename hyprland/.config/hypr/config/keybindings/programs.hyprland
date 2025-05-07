@@ -5,4 +5,4 @@ bind = $mainMod, R, exec, $menu
 bind = $mainMod, T, exec, $torrent
 bind = , print, exec, hyprshot -m region
 bind = $mainMod, print, exec, hyprshot -m output
-
+bind = $mainMod, V, exec, copyq menu

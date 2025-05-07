@@ -127,6 +127,9 @@ window#waybar.empty, window#waybar.empty #window {
 #bluetooth {
     color: @blue;
 }
+#bluetooth.disabled {
+    color: @red;
+}
 
 #pulseaudio {
     color: @sapphire;

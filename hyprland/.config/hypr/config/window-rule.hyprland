@@ -2,6 +2,7 @@
 
 # Example windowrule
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
+windowrule = float,title:^(CopyQ)$
 
 # Ignore maximize requests from apps. You'll probably like this.
 windowrule = suppressevent maximize, class:.*

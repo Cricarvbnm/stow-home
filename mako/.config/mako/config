@@ -6,6 +6,7 @@ border-color=#8aadf4
 border-radius=12
 default-timeout=5000
 font=serif 10
+max-icon-size=10
 
 margin=12
 padding=12,20

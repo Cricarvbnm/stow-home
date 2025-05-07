@@ -1,7 +1,23 @@
 #!/usr/bin/env zsh
 
-yay -Syuw --noconfirm &
-flatpak update --no-deploy -y &
+update_installation_dir = ~/.local/state/updates
+yay_installations = $update_installation_dir/yay
+flatpak_installations = $update_installation_dir/flatpak
+
+if (( $(wc -w $yay_installations | cut -d ' ' -f 1) )); then {
+        (cat $yay_installations | yay -Syuw --noconfirm -) \
+            && echo >$yay_installations
+    } &
+else yay -Syuw --noconfirm
+fi
+
+if (( $(wc -w $flatpak_installations | cut -d ' ' -f 1) )); then {
+        (cat $flatpak_installations | xargs flatpak update --no-deploy -y) \
+            && echo >$flatpak_installations
+    } &
+else flatpak update --no-deploy -y &
+fi
+
 proxychains tldr --update &
 
 wait

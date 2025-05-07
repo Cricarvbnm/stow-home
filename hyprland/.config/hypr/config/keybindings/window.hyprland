@@ -14,3 +14,6 @@ bind = $mainMod SHIFT, J, movewindow, d
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
+# operate window
+bind = $mainMod, X, fullscreen
+
