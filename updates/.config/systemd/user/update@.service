@@ -1,0 +1,7 @@
+[Unit]
+Description=updating for %i
+After=network-online.target
+
+[Service]
+ExecStart=zsh -c 'update-%i'
+

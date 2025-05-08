@@ -1,8 +1,7 @@
-[Unit]
-Description=doing updates midnight
-
 [Timer]
 OnCalendar=daily
+Unit=update@%i.service
 
 [Install]
 WantedBy=timers.target
+

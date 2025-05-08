@@ -16,7 +16,7 @@
 
 "network": {
     "toltip": false,
-    "interval": 5,
+    "interval": 1,
     "format-disconnected": "",
 },
 "network#eth": {

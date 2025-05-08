@@ -1,6 +1,0 @@
-[Unit]
-Description=doing some updates
-After=network-online.target
-
-[Service]
-ExecStart=zsh -c 'updates'

@@ -1,12 +1,19 @@
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
-# Example windowrule
+# Float Window
+
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 windowrule = float,title:^(CopyQ)$
+windowrule = float,class:^(org.kde.kcalc)$
+
+
+# Ignoe Maximize
 
 # Ignore maximize requests from apps. You'll probably like this.
 windowrule = suppressevent maximize, class:.*
 
+
 # Fix some dragging issues with XWayland
+
 windowrule = nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0
 

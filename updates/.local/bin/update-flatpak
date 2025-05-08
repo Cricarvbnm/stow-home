@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+installations=~/.local/state/updates/flatpak
+
+if (( $(wc -w $installations | cut -d ' ' -f 1) )); then
+    (cat $installations | xargs flatpak update --no-deploy -y) \
+        && echo >$installations
+else flatpak update --no-deploy -y &
+fi
+
