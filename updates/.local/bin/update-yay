@@ -2,8 +2,8 @@
 
 installations=~/.local/state/updates/yay
 
-if (( $(wc -w $installations | cut -d ' ' -f 1) )); then
-    (cat $installations | yay -Syuw --noconfirm -) && echo >$installations
+if [[ -a $installations ]]; then
+    cat $installations | xargs yay -Syuw --noconfirm \
+        && rename -l '' '.bak' $installations
 else yay -Syuw --noconfirm
 fi
-

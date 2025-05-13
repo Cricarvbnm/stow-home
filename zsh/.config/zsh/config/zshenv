@@ -1,14 +1,6 @@
-# vim:foldmethod=marker
-
-# environment.d{{{
-for conf in ${XDG_CONFIG_HOME:-$HOME/.config}/environment.d/*.conf; do
-    emulate zsh -o all_export -c \
-        "source $conf"
-done
-# }}}
-
-# Zsh{{{
 export ZDOTDIR=$HOME/.config/zsh
 export ZCONFIGDIR=$ZDOTDIR/config
-# }}}
 
+export ZSHENVDIR=$ZCONFIGDIR/zshenv.d
+
+for conf in $ZSHENVDIR/*.zsh; do source $conf; done

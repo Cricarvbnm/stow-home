@@ -1,31 +1,22 @@
 {
-"disk": {
-    "toltip": false,
-    "interval": 60,
-},
 "disk#root": {
-    "tooltip": false,
     "path": "/",
     "format": "{path}: {percentage_used}%",
 },
 "disk#storage": {
-    "tooltip": false,
     "path": "/storage",
     "format": "{path}: {percentage_used}%",
 },
 
-"network": {
-    "toltip": false,
-    "interval": 1,
-    "format-disconnected": "",
-},
 "network#eth": {
+    "interval": 1,
     "tooltip": false,
     "interface": "enp108s0",
     "on-click-middle": "nmcli device disconnect enp108s0",
     "format-ethernet": "󰲝 {ipaddr}/{cidr}󰇚 {bandwidthDownBytes}󰕒 {bandwidthUpBytes}",
 },
 "network#wifi": {
+    "interval": 1,
     "tooltip": false,
     "interface": "wlo1",
     "on-click-middle": "nmcli device disconnect wlo1",

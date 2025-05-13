@@ -31,8 +31,8 @@
 ],
     
 "modules-right": [
-    "hyprland/window",  
-    "custom/separator#line",
+    // "hyprland/window",  
+    // "custom/separator#line",
     "tray",
     "custom/separator#line",
     "clock",

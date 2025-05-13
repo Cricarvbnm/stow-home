@@ -24,13 +24,13 @@
             "uid": "{b9b14f60-f5ab-4d10-a0f2-0f6baa38f1bb}",
             "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E5%B2%81%E6%9C%88%E6%B5%81%E9%80%9D+sort_id%3A2"
         },
-        "忍者×杀手二人组的日常生活": {
-            "uid": "{dd26fa17-0aaf-4f73-8958-725ca7ffee6b}",
-            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E5%BF%8D%E8%80%85+%E6%9D%80%E6%89%8B+%E6%97%A5%E5%B8%B8%7C%E7%94%9F%E6%B4%BB+sort_id%3A2&sort_id=2&team_id=0&order=date-desc"
-        },
         "直至魔女消逝": {
             "uid": "{ecb36f79-ea20-479e-bbbe-15d98e8025ba}",
             "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E7%9B%B4%E8%87%B3%E9%AD%94%E5%A5%B3%E6%B6%88%E9%80%9D&sort_id=2&team_id=0&order=date-desc"
+        },
+        "紫云寺家的兄弟姐妹": {
+            "uid": "{16048e43-ac77-4b90-befd-39a3fe4d7d8a}",
+            "url": "https://share.dmhy.org/topics/rss/rss.xml?keyword=%E7%B4%AB%E4%BA%91%E5%AF%BA+sort_id%3A2"
         }
     }
 }

@@ -1,5 +1,5 @@
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target
 
 [Service]
 ExecStart=docker-compose up

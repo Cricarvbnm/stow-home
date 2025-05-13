@@ -1,31 +1,5 @@
 source $ZCONFIGDIR/zshenv
 
+export ZSHRCDIR=$ZCONFIGDIR/zshrc.d
 
-# Zsh
-
-# history
-setopt hist_ignore_dups
-export HISTFILE=~/.config/zsh/histfile
-export SAVEHIST=1000
-export HISTSIZE=1000
-
-# glob
-setopt mark_dirs
-unsetopt case_glob
-setopt glob_complete
-setopt glob_star_short
-
-
-source $ZCONFIGDIR/zplug.zsh
-source $ZCONFIGDIR/keybindings.zsh
-source $ZCONFIGDIR/proxy.zsh
-source $ZCONFIGDIR/zoxide.zsh
-
-source $ZCONFIGDIR/themes.zsh
-source $ZCONFIGDIR/zsh-highlight.zsh
-source <(dircolors -b) # highlight
-source $ZCONFIGDIR/completion.zsh
-
-source $ZCONFIGDIR/ls.zsh
-source $ZCONFIGDIR/aliases.zsh
-
+for conf in $ZSHRCDIR/*.zsh; do source $conf; done
