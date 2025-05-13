@@ -1,0 +1,1 @@
+set hist_ignore_dups
