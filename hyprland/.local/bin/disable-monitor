@@ -1,0 +1,8 @@
+#! /bin/env zsh
+
+monitor=${1:-HDMI-A-1}
+monitors_dir=~/.config/hypr/config/monitors
+
+echo "monitor=$monitor,disable" \
+    >"$monitors_dir/$monitor.hyprland"
+

@@ -17,8 +17,6 @@
     "orientation": "inherit",
     "modules": [
 	"battery",
-	"custom/separator#dot-line",
-	"power-profiles-daemon",
     ],
 },
 

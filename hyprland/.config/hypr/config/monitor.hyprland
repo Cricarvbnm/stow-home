@@ -1,7 +1,6 @@
 # See https://wiki.hyprland.org/Configuring/Monitors/
 monitor=,preferred,auto,auto
-# monitor=HDMI-A-1,1920x1080@60.00Hz,auto,1.5
-monitor=HDMI-A-1,disable
+source = $configDir/monitors/HDMI-A-1.hyprland
 
 # See https://wiki.hyprland.org/Configuring/XWayland/
 # unscale xwayland

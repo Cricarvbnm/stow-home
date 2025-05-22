@@ -1,0 +1,8 @@
+#! /bin/env zsh
+
+monitor=${1:-HDMI-A-1}
+monitors_dir=~/.config/hypr/config/monitors
+
+echo "monitor=$monitor,1920x1080@60.00Hz,auto,1.5" \
+    >"$monitors_dir/$monitor.hyprland"
+
