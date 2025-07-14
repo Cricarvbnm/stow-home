@@ -5,6 +5,7 @@
 # windowrule = float,class:^(kitty)$,title:^(kitty)$
 windowrule = float,title:^(CopyQ)$
 windowrule = float,class:^(org.kde.kcalc)$
+windowrule = float,title:^(重命名 .+)$,class:^([Tt]hunar)$
 
 
 # Ignoe Maximize

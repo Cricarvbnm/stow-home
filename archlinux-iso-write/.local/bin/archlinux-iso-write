@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+set -e
+
+if [ $# -ne 2 ]; then
+    echo "Usage: <source iso> <destination block device>"
+    exit 1
+fi
+
+src="$1"
+dst="$2"
+pv "$src" -o "$dst"
+
+echo 'n\n\n\n\n\nt\n\n07\nw' | fdisk "$dst" > /dev/null
+partition="${dst}3"
+
+mkfs.exfat "$partition" -L 'space'
+

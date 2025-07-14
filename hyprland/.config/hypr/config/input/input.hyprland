@@ -1,5 +1,8 @@
 # https://wiki.hyprland.org/Configuring/Variables/#input
 
 input {
+    accel_profile = adaptive
+    follow_mouse = 2
+    float_switch_override_focus = 0
 }
 

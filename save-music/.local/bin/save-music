@@ -1,0 +1,59 @@
+#! /usr/bin/env zsh
+
+set -e
+
+# Parameter check{{{
+if [ $# -lt 5 ]; then
+    echo "Usage:"
+    echo "<title> <artist> <music url> <original dir> <normalized dir> [lrc url]"
+    exit 1
+fi
+# }}}
+
+title=$1
+artist=$2
+music_url=$3
+original_dir=$4
+normalized_dir=$5
+lrc_url=$6
+
+name="$title - $artist"
+music_name=$name.mp3
+lrc_name=$name.lrc
+
+# Download{{{
+aria2c $music_url -o $music_name
+if [[ -n $lrc_url ]]; then
+    aria2c $lrc_url -o $lrc_name
+fi
+# }}}
+
+# Tag{{{
+kid3-cli -c "set artist $artist" -c "set title $title" $music_name
+# }}}
+
+# Normalization{{{
+mp3-normalize $music_name
+normalized_path="normalized/$music_name"
+# }}}
+
+# Deal with original{{{
+mv $music_name $lrc_name "$original_dir/"
+ln -s "$original_dir/$lrc_name" $lrc_name
+# }}}
+
+# Package{{{
+mv $normalized_path .
+normalized_path=$(basename $normalized_path)
+zip $name.zip $normalized_path $lrc_name
+# }}}
+
+# Deal with normalized{{{
+mv $normalized_path "$normalized_dir/"
+ln "$original_dir/$lrc_name" -t "$normalized_dir/"
+# }}}
+
+# Clean{{{
+rmdir --ignore-fail-on-non-empty normalized
+rm $lrc_name
+# }}}

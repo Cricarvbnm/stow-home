@@ -5,6 +5,6 @@ installations=~/.local/state/updates/flatpak
 if [[ -a $installations ]]; then
     cat $installations | xargs flatpak update --no-deploy -y \
         && rename -l '' '.bak' $installations
-else flatpak update --no-deploy -y &
+else flatpak update --no-deploy -y
 fi
 

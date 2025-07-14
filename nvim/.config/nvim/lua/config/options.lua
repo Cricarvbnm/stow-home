@@ -1,4 +1,5 @@
 vim.o.jumpoptions = 'stack'
+vim.o.foldmethod = 'marker'
 
 -- Encoding
 vim.o.fileencodings = 'ucs-bom,utf-8,cp936,gb18030,gbk,big5,sjis,euc-jp,latin1'

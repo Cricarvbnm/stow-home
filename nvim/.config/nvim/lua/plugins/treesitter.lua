@@ -2,13 +2,16 @@ return {
     'nvim-treesitter/nvim-treesitter',
 
     build = ":TSUpdate",
-
     config = function()
         require('nvim-treesitter.configs').setup {
             ensure_installed = {
-                'lua', 'bash', 'python', 'awk', 'cpp', 'java', 'html', 'xml', 'go',
-                'json', 'printf', 'toml', 'yaml', 'javascript',
+                'c', 'lua', 'bash', 'python', 'awk', 'cpp', 'html', 'xml', 'go',
+                'json', 'toml', 'yaml', 'javascript',
                 'markdown', 'markdown_inline', 'vim', 'vimdoc',
+            },
+            hightlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
             },
         }
     end,

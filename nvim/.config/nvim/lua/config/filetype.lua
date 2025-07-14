@@ -50,3 +50,8 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
     pattern = "*.hyprland",
     callback = function() vim.bo.filetype = "hyprlang" end
 })
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = "*.h",
+    callback = function() vim.bo.filetype = "c" end
+})
