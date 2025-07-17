@@ -20,4 +20,5 @@
     cu = "commit --amend"
 
 [pull]
-	rebase = true
+    rebase = true
+
