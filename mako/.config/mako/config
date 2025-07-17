@@ -11,6 +11,8 @@ max-icon-size=10
 margin=12
 padding=12,20
 
+on-button-middle=exec makoctl menu -n "$id" -- wofi -dp 'Select action: '
+
 [urgency=low]
 border-color=#a5adcb
 
