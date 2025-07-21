@@ -12,3 +12,5 @@ source = $configDir/keybindings/programs.hyprland
 source = $configDir/keybindings/window.hyprland
 source = $configDir/keybindings/workspace.hyprland
 source = $configDir/keybindings/media.hyprland
+
+source = $configDir/keybindings/notify.hyprland

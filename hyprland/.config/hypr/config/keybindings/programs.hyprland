@@ -1,9 +1,11 @@
+$hyprshot = hyprshot --output-folder $HOME/Pictures/screenshots
+
 bind = $mainMod, return, exec, $terminal
 bind = $mainMod, E, exec, $fileManager
 bind = $mainMod SHIFT, E, exec, $fileManager '$HOME/Desktop'
 bind = $mainMod, B, exec, $browser
 bind = $mainMod, R, exec, $menu
 bind = $mainMod, T, exec, $torrent
-bind = , print, exec, hyprshot -m output
-bind = $mainMod, print, exec, hyprshot -m region
+bind = , print, exec, $hyprshot -m output
+bind = $mainMod, print, exec, $hyprshot -m region
 bind = $mainMod, V, exec, copyq menu
