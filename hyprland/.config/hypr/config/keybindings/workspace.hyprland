@@ -27,6 +27,5 @@ bind = $mainMod CTRL, LEFT, workspace, e-1
 
 # minimize window
 bind = $mainMod SHIFT, 0, movetoworkspacesilent, special:magic
-bind = , mouse:275, movetoworkspacesilent, special:magic
 bind = $mainMod, Z, movetoworkspacesilent, special:magic
 

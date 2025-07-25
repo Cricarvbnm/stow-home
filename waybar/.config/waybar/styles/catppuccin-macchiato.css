@@ -114,7 +114,7 @@ window#waybar.empty, window#waybar.empty #window {
     color: @teal;
 }
 #temperature.critical {
-    background-color: @red;
+    color: @red;
 }
 
 #tray > .passive {

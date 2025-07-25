@@ -16,4 +16,4 @@ bindm = $mainMod, mouse:273, resizewindow
 
 # operate window
 bind = $mainMod, X, fullscreen
-
+bind = , mouse:275, fullscreen
