@@ -29,3 +29,6 @@ bind = $mainMod CTRL, LEFT, workspace, e-1
 bind = $mainMod SHIFT, 0, movetoworkspacesilent, special:magic
 bind = $mainMod, Z, movetoworkspacesilent, special:magic
 
+# privacy desktop
+bind = $mainMod, D, exec, $scriptDir/privacy-desktop
+

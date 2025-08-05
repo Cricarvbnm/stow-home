@@ -7,3 +7,6 @@ exec-once = hyprpaper
 exec-once = systemctl --user start hyprpolkitagent
 exec-once = copyq --start-server
 exec-once = nm-applet
+
+# privacy desktop
+exec-once = $scriptDir/privacy-desktop 1

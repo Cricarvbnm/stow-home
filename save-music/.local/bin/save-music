@@ -1,59 +1,153 @@
-#! /usr/bin/env zsh
+#!/usr/bin/env bash
 
-set -e
+# arg list
+title=""
+artist=""
+original_dir=""
+normalized_dir=""
+music_url=""
+lrc_url=""
 
-# Parameter check{{{
-if [ $# -lt 5 ]; then
-    echo "Usage:"
-    echo "<title> <artist> <music url> <original dir> <normalized dir> [lrc url]"
+# help {{{
+help_str="save-music [-t|--title title] [-a|--artist artist] [-o|--original-dir original_dir] [-n|--normalized-dir normalized_dir] <music_url> [lrc_url]"
+# }}}
+
+# parse args {{{
+# define options
+parsed_args=$(getopt \
+        -o "t:a:o:n:" \
+        --long "help,title:,artist:,original-dir:,normalized-dir:" \
+    -- "$@")
+if [ $? -ne 0 ]; then
+    echo "usage: $help_str" >&2
+    exit 1
+fi
+
+# sort args
+eval set -- "$parsed_args"
+unset parsed_args
+
+# parse
+while true; do
+    case "$1" in
+        --help)
+            echo "$help_str"
+            exit 0
+            ;;
+        -t|--title)
+            title="$2"
+            shift 2
+            ;;
+        -a|--artist)
+            artist="$2"
+            shift 2
+            ;;
+        -o|--original-dir)
+            original_dir="$2"
+            shift 2
+            ;;
+        -n|--normalized-dir)
+            normalized_dir="$2"
+            shift 2
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "error: unparsed option '$1'" >&2
+            exit 1
+            ;;
+    esac
+done
+
+# parse positional args
+music_url="${1:-}"
+lrc_url="${2:-}"
+
+# check args
+if [ -z "$music_url" ]; then
+    echo "error: missing music_url" >&2
+    echo $help_str >&2
     exit 1
 fi
 # }}}
 
-title=$1
-artist=$2
-music_url=$3
-original_dir=$4
-normalized_dir=$5
-lrc_url=$6
+# debug args {{{
+echo "title = $title" >&2
+echo "artist = $artist" >&2
+echo "original_dir = $original_dir" >&2
+echo "normalized_dir = $normalized_dir" >&2
+echo "music_url = $music_url" >&2
+echo "lrc_url = $lrc_url" >&2
+# }}}
 
-name="$title - $artist"
-music_name=$name.mp3
-lrc_name=$name.lrc
+# cache {{{
+cache_dir="$HOME/.cache/save-music"
+# }}}
 
-# Download{{{
-aria2c $music_url -o $music_name
-if [[ -n $lrc_url ]]; then
-    aria2c $lrc_url -o $lrc_name
+set -e
+
+# rename {{{
+if [ -n "$artist" ]; then
+    name="$title - $artist"
+else
+    name="$title"
+fi
+
+# rename music
+music_cache_path="$cache_dir/$name.mp3"
+
+# rename lrc
+if [ -n "$lrc_url" ]; then
+    lrc_cache_path="$cache_dir/$name.lrc"
 fi
 # }}}
 
-# Tag{{{
-kid3-cli -c "set artist $artist" -c "set title $title" $music_name
+# download {{{
+# download music
+curl -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0' \
+    --create-dirs --fail --progress-bar "$music_url" > "$music_cache_path"
+
+# download lrc
+if [ -n "$lrc_url" ]; then
+    curl -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0' \
+        --create-dirs --fail --progress-bar "$lrc_url" > "$lrc_cache_path"
+fi
 # }}}
 
-# Normalization{{{
-mp3-normalize $music_name
-normalized_path="normalized/$music_name"
+# normalization {{{
+if [ -n "$normalized_dir" ]; then
+    mp3-normalize "$music_cache_path" --output-folder "$normalized_dir"
+    normalized_path="$normalized_dir/"$(basename "$music_cache_path")
+fi
 # }}}
 
-# Deal with original{{{
-mv $music_name $lrc_name "$original_dir/"
-ln -s "$original_dir/$lrc_name" $lrc_name
+# tag {{{
+if [ -n "$normalized_path" ]; then
+    if [ -n "$title" ]; then
+        kid3-cli -c "set title $title" "$normalized_path"
+    fi
+    if [ -n "$artist" ]; then
+        kid3-cli -c "set artist $artist" "$normalized_path"
+    fi
+fi
 # }}}
 
-# Package{{{
-mv $normalized_path .
-normalized_path=$(basename $normalized_path)
-zip $name.zip $normalized_path $lrc_name
+# mv {{{
+# original
+if [ -n "$original_dir" ]; then
+    mkdir -p "$original_dir"
+
+    mv "$music_cache_path" "$original_dir"
+
+    if [ -n "$lrc_cache_path" ]; then
+        cp "$lrc_cache_path" "$original_dir"
+    fi
+fi
+
+if [[ -n "$normalized_dir" ]] && [[ -n "$lrc_cache_path" ]]; then
+    cp "$lrc_cache_path" "$normalized_dir"
+fi
 # }}}
 
-# Deal with normalized{{{
-mv $normalized_path "$normalized_dir/"
-ln "$original_dir/$lrc_name" -t "$normalized_dir/"
-# }}}
-
-# Clean{{{
-rmdir --ignore-fail-on-non-empty normalized
-rm $lrc_name
-# }}}
