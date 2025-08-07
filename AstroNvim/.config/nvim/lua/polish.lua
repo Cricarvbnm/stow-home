@@ -1,0 +1,11 @@
+-- This will run last in the setup process.
+-- This is just pure lua so anything that doesn't
+-- fit in the normal config locations above can go here
+
+-- if not pcall(require, "config.mappings") then
+--   vim.notify("error: require: mappigns")
+-- end
+--
+-- if not pcall(require, "config.options") then
+--   vim.notify("error: require: options")
+-- end

@@ -20,4 +20,4 @@ vim.o.splitright = true -- Open tabs right
 vim.o.ignorecase = true
 
 -- Mouse
-vim.o.mouse = a
+vim.o.mouse = 'a'

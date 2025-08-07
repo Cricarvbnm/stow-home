@@ -8,7 +8,7 @@ bind = $mainMod, 6, workspace, 6
 bind = $mainMod, 7, workspace, 7
 bind = $mainMod, 8, workspace, 8
 bind = $mainMod, 9, workspace, 9
-bind = $mainMod, 0, togglespecialworkspace, magic
+bind = $mainMod ALT, Z, togglespecialworkspace, magic
 
 # move active window to a workspace with mainMod + SHIFT + [0-9]
 bind = $mainMod SHIFT, 1, movetoworkspace, 1
@@ -26,7 +26,7 @@ bind = $mainMod CTRL, RIGHT, workspace, e+1
 bind = $mainMod CTRL, LEFT, workspace, e-1
 
 # minimize window
-bind = $mainMod SHIFT, 0, movetoworkspacesilent, special:magic
+bind = $mainMod SHIFT, Z, movetoworkspacesilent, special:magic
 bind = $mainMod, Z, movetoworkspacesilent, special:magic
 
 # privacy desktop
