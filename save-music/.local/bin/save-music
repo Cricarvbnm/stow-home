@@ -107,12 +107,12 @@ fi
 # download {{{
 # download music
 curl -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0' \
-    --create-dirs --fail --progress-bar "$music_url" > "$music_cache_path"
+    --create-dirs --fail --progress-bar "$music_url" --output "$music_cache_path"
 
 # download lrc
 if [ -n "$lrc_url" ]; then
     curl -H 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0' \
-        --create-dirs --fail --progress-bar "$lrc_url" > "$lrc_cache_path"
+        --create-dirs --fail --progress-bar "$lrc_url" --output "$lrc_cache_path"
 fi
 # }}}
 

@@ -1,2 +1,3 @@
-bind = $mainMod, N, exec, makoctl invoke
-bind = $mainMod ALT, N, exec, makoctl menu -- wofi -dp 'Choose Action: '
+bind = $mainMod, N, exec, swaync-client --toggle-panel
+bind = $mainMod CTRL, N, exec, swaync-client --close-latest
+bind = $mainMod CTRL SHIFT, N, exec, swaync-client --close-all

@@ -75,13 +75,13 @@ return {
     mappings = {
       n = {
         ["<Leader>\\"] = { "<cmd>nohlsearch<CR>", desc = "Clear highlighting search" },
-      },
 
-      [{ "n", "i" }] = {
         -- Buffer Navigation
         ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
+      },
 
+      [{ "n", "i" }] = {
         -- Compeltion
         ["<c-.>"] = { "<c-space>" },
       },
