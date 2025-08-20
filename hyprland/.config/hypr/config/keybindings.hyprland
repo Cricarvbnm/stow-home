@@ -14,3 +14,5 @@ source = $configDir/keybindings/workspace.hyprland
 source = $configDir/keybindings/media.hyprland
 
 source = $configDir/keybindings/notify.hyprland
+
+source = $configDir/keybindings/wallpaper.hyprland

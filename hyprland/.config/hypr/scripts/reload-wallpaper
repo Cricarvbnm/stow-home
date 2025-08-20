@@ -1,0 +1,10 @@
+#! /usr/bin/env sh
+
+set -e
+
+wallpaper_path="${1:-$HOME/.config/hypr/hyprpaper/current-wallpaper}"
+
+hyprctl hyprpaper unload "$wallpaper_path"
+hyprctl hyprpaper preload "$wallpaper_path"
+hyprctl hyprpaper wallpaper ",$wallpaper_path"
+

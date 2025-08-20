@@ -1,0 +1,1 @@
+bind = $mainMod ALT, W, exec, $scriptDir/reload-wallpaper
