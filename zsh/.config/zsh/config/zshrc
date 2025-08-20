@@ -2,4 +2,28 @@ source $ZCONFIGDIR/zshenv
 
 export ZSHRCDIR=$ZCONFIGDIR/zshrc.d
 
-for conf in $ZSHRCDIR/*.zsh; do source $conf; done
+local DEBUG_LOAD_TIME=false
+
+if $DEBUG_LOAD_TIME; then
+  local total_start=$(date +%s%N)
+fi
+
+for conf in $ZSHRCDIR/*.zsh; do
+  if $DEBUG_LOAD_TIME; then
+    local start=$(date +%s%N)
+  fi
+
+  source $conf
+
+  if $DEBUG_LOAD_TIME; then
+    local end=$(date +%s%N)
+    local elapsed=$(( (end - start) / 1000000 ))
+    echo "Loaded '$conf' in $elapsed ms"
+  fi
+done
+
+if $DEBUG_LOAD_TIME; then
+  local total_end=$(date +%s%N)
+  local total_elapsed=$(( (total_end - total_start) / 1000000 ))
+  echo "Total zshrc.d loading time: $total_elapsed ms"
+fi
